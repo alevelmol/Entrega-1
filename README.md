@@ -37,11 +37,11 @@ El dataset está compuesto por 12 columnas, con la siguiente descripción:
 
 Para trabajar con los datos del dataset se ha definido la siguiente tupla con nombre:
 
-'pelis = namedtuple("Lista", "day, month, year, fecha, duration, title, subject, actor, actress, director, popularity, awards, rate")'
+`pelis = namedtuple("Lista", "day, month, year, fecha, duration, title, subject, actor, actress, director, popularity, awards, rate")`
 
 en la que cada variable es de tipo:
 
-'pelis = namedtuple("Lista", "str, str, str, datetime, int, str, str, str, str, str, int, boolean, float")'
+`pelis = namedtuple("Lista", "str, str, str, datetime, int, str, str, str, str, str, int, boolean, float")`
 
 ## Funciones implementadas
 En este proyecto se han implementado las siguientes funciones, divididas en cada uno de los módulos en los que se encuentran.
