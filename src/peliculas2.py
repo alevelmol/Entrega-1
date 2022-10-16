@@ -15,7 +15,7 @@ def parse_bool(cadena):
 def mostrar_numerado(coleccion):
     '''
     A partir de una colección de datos, devuelve esa colección de datos, pero enumerada desde 1 hasta el último valor de la colección(última fila)
-    Parametro: Colección con listas de tuplas
+    Parametro: Colección con listas de tupla
     Formato: Coleccion: Lista
     Devuelve: Enumeración de las listas de tupla
     '''
