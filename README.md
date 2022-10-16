@@ -21,7 +21,7 @@ El dataset está compuesto por 12 columnas, con la siguiente descripción:
 
 * **day**: de tipo str, representa el día de salida de la película
 * **month**: de tipo str, representa el mes de salida de la película
-* **year**: de tipo str, representa el año de salida de la película
+* **year**: de tipo str, representa el año de salida de la película.
 * **duration** de tipo int, representa la duración de la película, en minutos.
 * **title** de tipo str, representa el título de la película
 * **subject** de tipo str, representa el género de la película
