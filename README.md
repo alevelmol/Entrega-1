@@ -8,7 +8,7 @@ El proyecto entregado tiene como objetivo leer y analizar datos acerca de alguna
 
 * **/src**: Contiene los diferentes módulos de Python que conforman el proyecto.
   * **\<peliculas.py\>**: Contiene las funciones para tratar el dataset
-  * **\<peliculas_test.py\>**: Contiene las funciones para testear el funcionamiento del módulo 'peliculas.py'. En este módulo aparece el main
+  * **\<peliculas_test.py\>**: Contiene las funciones para testear el funcionamiento del módulo `peliculas.py`. En este módulo aparece el main
   * **\<peliculas2.py\>**: Contiene las funciones de parseo de booleano y el enumerado para imprimir las películas
 * **/data**: Contiene el dataset o datasets del proyecto
     * **\<movie_dataset.csv\>**: Contiene la lista de las películas, para cada película se dan datos como la fecha de lanzamiento, director, actores, popularidad, si ganaron o no premio, etc...
@@ -48,17 +48,17 @@ En este proyecto se han implementado las siguientes funciones, divididas en cada
 
 ### Módulo peliculas
 Es el módulo principal, en el que se encuentran definidas las funciones del proyecto, para posteriormente probarlas en el módulo peliculas_test
-* **lee_datos(fichero)**: Función que lee el database y guarda los datos en una lista de tuplas de tipo Lista. Para implementar la función se ha recurrido a una serie de funciones auxiliares localizadas en el [modulo 'peliculas2']
+* **lee_datos(fichero)**: Función que lee el database y guarda los datos en una lista de tuplas de tipo Lista. Para implementar la función se ha recurrido a una serie de funciones auxiliares localizadas en el [modulo `peliculas2`]
   * **parse_bool**: Función para convertir cadena de texto en booleano
   * **parse_float**: Función para convertir cadena de texto en float
   * **parse_int**: Función para convertir cadena de texto en int
-* **peliculas_leidas(fichero)**: Función que, a partir del fichero, lee cuantas películas hay y las imprime todas, enumeradas, apoyándose en la función 'mostrar_enumerado'
+* **peliculas_leidas(fichero)**: Función que, a partir del fichero, lee cuantas películas hay y las imprime todas, enumeradas, apoyándose en la función `mostrar_enumerado`
   * **mostrar_enumerado**: Función que enumera e imprime una lista de tuplas de manera ordenada
-* **tres_primeras_peliculas(fichero)**: Función que muestra en pantalla las tres primeras películas del dataset. Se apoya también en la función 'mostrar_enumerado'
-* **tres_ultimas_peliculas(fichero)**: Función que muestra en pantalla las tres últimas películas del dataset. Se apoya también en la función 'mostrar_enumerado'
+* **tres_primeras_peliculas(fichero)**: Función que muestra en pantalla las tres primeras películas del dataset. Se apoya también en la función `mostrar_enumerado`
+* **tres_ultimas_peliculas(fichero)**: Función que muestra en pantalla las tres últimas películas del dataset. Se apoya también en la función `mostrar_enumerado`
 
 ### Módulo peliculas_test
-En el módulo de pruebas se han definido las funciones para probar el funcionamiento de las funciones del módulo películas. Es decir, cada función definida en el módulo peliculas tiene su correspondiente función para probar su funcionamiento. Por ejemplo, la funcion test_peliculas_leidas ejecuta la función peliculas_leidas, definida en el módulo principal
+En el módulo de pruebas se han definido las funciones para probar el funcionamiento de las funciones del módulo películas. Es decir, cada función definida en el módulo peliculas tiene su correspondiente función para probar su funcionamiento. Por ejemplo, la funcion `test_peliculas_leidas` ejecuta la función `peliculas_leidas`, definida en el módulo principal
 * **test_peliculas_leidas()**:
 * **test_tres_primeras_peliculas()**:
 * **test_tres_ultimas_peliculas()**:
