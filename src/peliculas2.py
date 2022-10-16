@@ -4,7 +4,7 @@ def parse_bool(cadena):
     Parametro: Cadena con los valores "Yes" or "No".
     Formato: Cadena: str
     Devuelve: True o False, dependiendo del valor de la cadena.
-    Formato del resultado: bool
+    Formato del resultado: boo
     '''
     if cadena == "Yes":
         booleano = True

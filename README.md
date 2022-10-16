@@ -11,7 +11,7 @@ El proyecto entregado tiene como objetivo leer y analizar datos acerca de alguna
   * **\<peliculas_test.py\>**: Contiene las funciones para testear el funcionamiento del módulo 'peliculas.py'. En este módulo aparece el main
   * **\<peliculas2.py\>**: Contiene las funciones de parseo de booleano y el enumerado para imprimir las películas
 * **/data**: Contiene el dataset o datasets del proyecto
-    * **\<movie_dataset.csv\>**: Contiene la lista de las películas, para cada película se dan datos como la fecha de lanzamiento, director, actores, popularidad, si ganaron o no premio, etc...
+    * **\<movie_dataset.csv\>**: Contiene la lista de las películas, para cada película se dan datos como la fecha de lanzamiento, director, actores, popularidad, si ganaron o no premio, etc..
     
 ## Estructura del *dataset*
 
