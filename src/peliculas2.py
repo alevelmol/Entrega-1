@@ -10,3 +10,9 @@ def mostrar_numerado(coleccion):
     for p in coleccion:
         i=i+1
         print (i, p) 
+
+def parse_int(cadena):
+    return int(cadena)
+
+def parse_float(cadena):
+    return float(cadena)

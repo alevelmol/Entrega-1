@@ -1,25 +1,21 @@
 
 
 
-from peliculas import lee_datos
+from peliculas import *
 from peliculas2 import mostrar_numerado
 PELIS = lee_datos(".\data\movie_dataset.csv")
 
 
 def test_peliculas_leidas():
-    numerototal = len(PELIS)
-    print(f"Se han leido {numerototal} películas")
-    mostrar_numerado(PELIS)
+    peliculas_leidas(PELIS)
 
 
 def test_tres_primeras_pelis():
-    print("Mostrando en pantalla las tres primeras películas:")
-    mostrar_numerado(PELIS[:3])
+    tres_primeras_pelis(PELIS)
 
 
 def test_tres_ultimas_pelis():
-    print("Mostrando en pantalla las tres últimas películas:")
-    mostrar_numerado(PELIS[-3:])
+    tres_ultimas_pelis(PELIS)
 
 
 if __name__ == "__main__":
