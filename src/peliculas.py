@@ -67,3 +67,14 @@ def tres_ultimas_pelis(fichero):
     
     print("Mostrando en pantalla las tres últimas películas:")
     mostrar_numerado(fichero[-3:])
+
+def filtra_por_categoria(fichero, categoria):
+    '''
+    A partir de un fichero csv y una categoría de película, devuelve todos los datos de todas las películas con dicha categoría
+    '''
+    return [tupla for tupla in fichero if tupla.subject == categoria]
+
+def calcular_media_duracion_por_categoria(fichero, categoria):
+    duraciones = [a.duration for a in fichero if a.subject == categoria]
+    return sum(duraciones)/len(duraciones)
+    
