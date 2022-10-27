@@ -26,4 +26,4 @@ if __name__ == "__main__":
     #test_tres_primeras_pelis()
     #test_tres_ultimas_pelis()
     #test_filtra_por_categoria()
-    test_calcular_media_duracion_por_categoria()
+    #test_calcular_media_duracion_por_categoria()
