@@ -1,12 +1,12 @@
+import csv
 from ast import parse
 from calendar import month
-from collections import namedtuple
+from collections import namedtuple, defaultdict
 from datetime import datetime
-import csv
 
 from peliculas2 import *
 
-pelis = namedtuple("Lista", "day, month, year, fecha, duration, title, subject, actor, actress, director, popularity, awards, rate")
+Pelis = namedtuple("Pelis", "day, month, year, fecha, duration, title, subject, actor, actress, director, popularity, awards, rate")
 
 def lee_datos(fichero):
     '''
@@ -31,7 +31,7 @@ def lee_datos(fichero):
             awards = parse_bool(awards)
             rate = rate.replace("," , ".")
             rate = parse_float(rate)
-            peliculas.append(pelis(day,month ,year, fecha ,duration, title, subject, actor, actress, director, popularity, awards, rate))
+            peliculas.append(Pelis(day,month ,year, fecha ,duration, title, subject, actor, actress, director, popularity, awards, rate))
 
     return peliculas
 
@@ -70,11 +70,35 @@ def tres_ultimas_pelis(fichero):
 
 def filtra_por_categoria(fichero, categoria):
     '''
+    B1
     A partir de un fichero csv y una categoría de película, devuelve todos los datos de todas las películas con dicha categoría
     '''
     return [tupla for tupla in fichero if tupla.subject == categoria]
 
 def calcular_media_duracion_por_categoria(fichero, categoria):
+    '''
+    B1
+    '''
     duraciones = [a.duration for a in fichero if a.subject == categoria]
     return sum(duraciones)/len(duraciones)
-    
+
+def ordenar_por_rating_y_anyo(fichero, anyo):
+    '''
+    B2 F2
+    '''
+    pe_lista = [(a.title, a.rate) for a in fichero if a.year == anyo]
+    return sorted(pe_lista, key = lambda x:x[1], reverse = True)
+
+def top_pelicula_por_categoria_y_anyo(fichero, anyo, categoria="Comedy"):
+    '''
+    B2 F1
+    '''
+    peliculas_por_categoria = filtra_por_categoria(fichero, categoria)
+    pa = [e for e in peliculas_por_categoria if e.year == anyo]
+    return max(pa, key = lambda x:x.rate)
+
+def agrupar_por_categoria(fichero):
+    res = defaultdict(str)
+    for e in fichero:
+        res[e.subject] += e.title + "; "
+    return res
