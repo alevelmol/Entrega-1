@@ -37,31 +37,41 @@ El dataset está compuesto por 12 columnas, con la siguiente descripción:
 
 Para trabajar con los datos del dataset se ha definido la siguiente tupla con nombre:
 
-`pelis = namedtuple("Lista", "day, month, year, fecha, duration, title, subject, actor, actress, director, popularity, awards, rate")`
+`Pelis = namedtuple("Pelis", "day, month, year, fecha, duration, title, subject, actor, actress, director, popularity, awards, rate")`
 
 en la que cada variable es de tipo:
 
-`pelis = namedtuple("Lista", "str, str, str, datetime, int, str, str, str, str, str, int, boolean, float")`
+`Pelis = namedtuple("Pelis", "str, str, str, datetime, int, str, str, str, str, str, int, boolean, float")`
 
 ## Funciones implementadas
 En este proyecto se han implementado las siguientes funciones, divididas en cada uno de los módulos en los que se encuentran.
 
 ### Módulo peliculas
 Es el módulo principal, en el que se encuentran definidas las funciones del proyecto, para posteriormente probarlas en el módulo peliculas_test
-* **lee_datos(fichero)**: Función que lee el database y guarda los datos en una lista de tuplas de tipo Lista. Para implementar la función se ha recurrido a una serie de funciones auxiliares localizadas en el [modulo `peliculas2`]
-  * **parse_bool**: Función para convertir cadena de texto en booleano
-  * **parse_float**: Función para convertir cadena de texto en float
-  * **parse_int**: Función para convertir cadena de texto en int
-* **peliculas_leidas(fichero)**: Función que, a partir del fichero, lee cuantas películas hay y las imprime todas, enumeradas, apoyándose en la función `mostrar_enumerado`
-  * **mostrar_enumerado**: Función que enumera e imprime una lista de tuplas de manera ordenada
-* **tres_primeras_peliculas(fichero)**: Función que muestra en pantalla las tres primeras películas del dataset. Se apoya también en la función `mostrar_enumerado`
-* **tres_ultimas_peliculas(fichero)**: Función que muestra en pantalla las tres últimas películas del dataset. Se apoya también en la función `mostrar_enumerado`
+#### Entrega 1
+  * **lee_datos(fichero)**: Función que lee el database y guarda los datos en una lista de tuplas de tipo Pelis. Para implementar la función se ha recurrido a una serie de funciones auxiliares localizadas en el [modulo `peliculas2`]
+    * **parse_bool**: Función para convertir cadena de texto en booleano
+    * **parse_float**: Función para convertir cadena de texto en float
+    * **parse_int**: Función para convertir cadena de texto en int
+    * **mostrar_enumerado**: Función que enumera e imprime una lista de tuplas de manera ordenada
 
+#### Entrega 2
+  * **Bloque 1**
+    * **filtra_por_categoria(fichero, categoria)**: Función que, dados un fichero y una categoria, devuelve las listas de tuplas, correspondientes a todas las películas de la categoria introducida
+    * **calcular_media_duracion_por_categoria(fichero, categoria)**: Funcion que, dados un fichero y una categoria, devuelve un valor float, correspondiente a la media de las duraciones de las películas de la categoría indicada.
+  * **Bloque 2**
+    * **top_pelicula_por_categoria_y_anyo(fichero, anyo, categoria="Comedy")**: Función que, dados un fichero, un año y una categoria(la cual tiene como valor predeterminado "Comedy"), devuelve a tupla correspondiente a la mejor pelicula del año y categoria indicados
+    * **ordenar_por_rating_y_anyo(fichero, anyo)**: Función que, dados un fichero y un año, devuelve una lista de tuplas, con el titulo y la valoración de la pelicula, ordenadas de mayor a menor valoracion, del año introducido en la funcion.
+    * **agrupar_por_categoria(fichero)**: Función que, dado un fichero, devuelve un diccionario cuyas claves son las diferentes categorias de las peliculas, y los valores, aquellas películas que tengan dicha categoria
 ### Módulo peliculas_test
-En el módulo de pruebas se han definido las funciones para probar el funcionamiento de las funciones del módulo películas. Es decir, cada función definida en el módulo peliculas tiene su correspondiente función para probar su funcionamiento. Por ejemplo, la funcion `test_peliculas_leidas` ejecuta la función `peliculas_leidas`, definida en el módulo principal
-* **test_peliculas_leidas()**:
-* **test_tres_primeras_peliculas()**:
-* **test_tres_ultimas_peliculas()**:
+En el módulo de pruebas se han definido las funciones para probar el funcionamiento de las funciones del módulo películas. Es decir, cada función definida en el módulo peliculas tiene su correspondiente función para probar su funcionamiento. Por ejemplo, la funcion `test_lee_datos` ejecuta la función `lee_datos`, definida en el módulo principal. Dentro del test de lee_datos, se haya contenido las pruebas pertinentes (mostrar los datos leidos, mostrar las tres primeras y las tres ultimas peliculas del dataset)
+* **test_lee_datos**:
+* **test_filtra_por_categoria**
+* **test_calcular_media_duracion_por_categoria**
+* **test_top_pelicula_por_categoria_y_anyo**
+* **test_ordenar_por_rating_y_anyo**
+* **test_agrupar_por_categoria**
+
 ### Módulo peliculas2
 En este módulo se hayan las funciones de parseo, más la función de mostrar_enumerado
 * **parse_bool**: Función para convertir cadena de texto en booleano. Si la cadena recibida es un Yes, devuelve el valor True, y si la cadena recibida es un No, devuelve el valor False
