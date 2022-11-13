@@ -23,7 +23,6 @@ def test_calcular_media_duracion_por_categoria(fichero):
     print(calcular_media_duracion_por_categoria(fichero, categoria))
 
 def test_top_pelicula_por_categoria_y_anyo(fichero):
-    print("###########INICIANDO TEST###########")
     anyo = "1985"
     categoria = "Drama"
     a = top_pelicula_por_categoria_y_anyo(fichero, anyo, categoria)
@@ -35,7 +34,6 @@ def test_ordenar_por_rating_y_anyo(fichero):
     print(f"Las peliculas del anyo {anyo}, ordenadas por puntaje son: {a}")
 
 def test_agrupar_por_categoria(fichero):
-    print("###########INICIANDO TEST###########")
     a = agrupar_por_categoria(fichero)
     #print (a)
     for k,v in a.items():
