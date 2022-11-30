@@ -97,7 +97,12 @@ def agrupar_por_categoria(fichero):
     Formato: fichero:str
     Devuelve: Un diccionario cuyas claves son las diferentes categorias de las peliculas, y los valores, aquellas películas que tengan dicha categoria
     '''
-    res = defaultdict(str)
+    res = dict()
+    
     for e in fichero:
-        res[e.subject] += e.title + "; "
+        clave = e.subject
+        if clave not in res:
+            res[clave] = [e]
+        else:
+            res[e.subject].append(e)
     return res
