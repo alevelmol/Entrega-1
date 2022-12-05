@@ -106,3 +106,34 @@ def agrupar_por_categoria(fichero):
         else:
             res[e.subject].append(e)
     return res
+
+def contar_peliculas_por_anyo(fichero):
+    """
+    B3 F1 (8)
+
+    """
+    d = defaultdict(int)
+    for p in fichero:
+        d[p.year] += 1
+    return d
+
+def pelicula_con_mas_duracion(fichero):
+    """
+    B3 F2 (11)
+    """
+    d = defaultdict()
+    for p in fichero:
+        d[p.title] = p.duration
+
+    return max(d.items(), key = lambda x:x[1])
+
+def pelicula_con_mas_valoracion_por_año(fichero):
+    """
+    B3 F3 (12)
+    """
+    d = defaultdict()
+    d1 = defaultdict()
+    for p in fichero:
+        d[p.title] = p.rate
+        d1[p.year] = sorted(d.items(), key = lambda x:x[1], reverse=True)[0]
+    return d1
