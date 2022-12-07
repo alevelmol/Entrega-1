@@ -131,9 +131,4 @@ def pelicula_con_mas_valoracion_por_año(fichero):
     """
     B3 F3 (12)
     """
-    d = defaultdict()
-    d1 = defaultdict()
-    for p in fichero:
-        d[p.title] = p.rate
-        d1[p.year] = sorted(d.items(), key = lambda x:x[1], reverse=True)[0]
-    return d1
+    
