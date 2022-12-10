@@ -1,7 +1,7 @@
 import csv
 from ast import parse
 from calendar import month
-from collections import namedtuple, defaultdict
+from collections import namedtuple, defaultdict, OrderedDict
 from datetime import datetime
 
 from peliculas2 import *
@@ -127,8 +127,39 @@ def pelicula_con_mas_duracion(fichero):
 
     return max(d.items(), key = lambda x:x[1])
 
-def pelicula_con_mas_valoracion_por_año(fichero):
+
+def aux_dic(fichero):
+    """
+    AUX PARA B3 F3 (12)
+    """
+    d = defaultdict()
+    for p in fichero:
+        d[(p.title, p.year)] = p.rate
+    return sorted(d.items(), key = lambda x:x[1], reverse = True)
+def pelicula_con_mas_valoracion_por_anyo(fichero):
     """
     B3 F3 (12)
     """
+    d = defaultdict(list)
+    for titan, pel in aux_dic(fichero):
+        d[titan[1]] += [(titan[0], pel)]
+    return {an : m[0] for an, m in d.items()}
+
+def aux_dic_2(fichero):
+    """
+    AUX PARA B3 F4 (14)
+    """
+    d = defaultdict()
+    for p in fichero:
+        d[(p.title, p.subject)] = p.rate
+    return sorted(d.items(), key = lambda x:x[1], reverse = True)
+
+def top_n_peliculas_por_genero(fichero, n=3):
+    """
+    B3 F4 (14)
+    """
+    d = defaultdict(list)
+    for titan, pel in aux_dic_2(fichero):
+        d[titan[1]] += [(titan[0], pel)]
+    return {an : m[:n] for an, m in d.items()}
     

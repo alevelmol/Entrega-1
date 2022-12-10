@@ -47,10 +47,22 @@ def test_contar_peliculas_por_anyo(fichero):
 def test_pelicula_con_mas_duracion(fichero):
     print(f"La pelicula con más duracion es {pelicula_con_mas_duracion(fichero)[0]} con una duracion de {pelicula_con_mas_duracion(fichero)[1]} minutos")
 
-def test_pelicula_con_mas_valoracion_por_año(fichero):
-    a = pelicula_con_mas_valoracion_por_año(fichero)
+def test_aux_dic(fichero):
+    a = aux_dic(fichero)
+    print(a)
+
+def test_pelicula_con_mas_valoracion_por_anyo(fichero):
+    a = pelicula_con_mas_valoracion_por_anyo(fichero)
     for k,v in a.items():
         print(f"{k} ----> {v}")
+    #print(a)
+
+def test_top_n_peliculas_por_genero(fichero):
+    n = 2
+    a = top_n_peliculas_por_genero(fichero, n)
+    for k,v in a.items():
+        print(f"{k} ----> {v}")
+
 
 if __name__ == "__main__":
     #test_lee_datos("Entrega 1\data\movie_dataset.csv")
@@ -62,4 +74,7 @@ if __name__ == "__main__":
     #test_agrupar_por_categoria(PELIS)
     #test_contar_peliculas_por_anyo(PELIS)
     #test_pelicula_con_mas_duracion(PELIS)
-    test_pelicula_con_mas_valoracion_por_año(PELIS)
+    #test_aux_dic(PELIS)
+    #test_pelicula_con_mas_valoracion_por_anyo(PELIS)
+    test_top_n_peliculas_por_genero(PELIS)
+    
