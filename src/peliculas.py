@@ -3,6 +3,7 @@ from ast import parse
 from calendar import month
 from collections import namedtuple, defaultdict, OrderedDict
 from datetime import datetime
+from matplotlib import pyplot as plt
 
 from peliculas2 import *
 
@@ -162,4 +163,17 @@ def top_n_peliculas_por_genero(fichero, n=3):
     for titan, pel in aux_dic_2(fichero):
         d[titan[1]] += [(titan[0], pel)]
     return {an : m[:n] for an, m in d.items()}
-    
+
+def tabla_generos(fichero):
+    """
+    B4 F1
+    """
+    d = defaultdict(int)
+    for p in fichero:
+        d[p.subject] += 1
+    info = d.items()
+    generos = [a[0] for a in info]
+    num = [a[1] for a in info]
+    plt.bar(generos, num, width=0.7, edgecolor="black" ,color = ["red", "darkorange", "gold", "yellow", "lime", "cyan", "steelblue", "blueviolet", "deeppink"])
+    plt.title("Grafica generos")
+    plt.show()

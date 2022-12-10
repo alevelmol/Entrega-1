@@ -63,6 +63,8 @@ def test_top_n_peliculas_por_genero(fichero):
     for k,v in a.items():
         print(f"{k} ----> {v}")
 
+def test_tabla_generos(fichero):
+    tabla_generos(fichero)
 
 if __name__ == "__main__":
     #test_lee_datos("Entrega 1\data\movie_dataset.csv")
@@ -76,5 +78,6 @@ if __name__ == "__main__":
     #test_pelicula_con_mas_duracion(PELIS)
     #test_aux_dic(PELIS)
     #test_pelicula_con_mas_valoracion_por_anyo(PELIS)
-    test_top_n_peliculas_por_genero(PELIS)
+    #test_top_n_peliculas_por_genero(PELIS)
+    test_tabla_generos(PELIS)
     
