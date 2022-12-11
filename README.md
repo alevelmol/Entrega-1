@@ -63,6 +63,17 @@ Es el módulo principal, en el que se encuentran definidas las funciones del pro
     * **top_pelicula_por_categoria_y_anyo(fichero, anyo, categoria="Comedy")**: Función que, dados un fichero, un año y una categoria(la cual tiene como valor predeterminado "Comedy"), devuelve a tupla correspondiente a la mejor pelicula del año y categoria indicados
     * **ordenar_por_rating_y_anyo(fichero, anyo)**: Función que, dados un fichero y un año, devuelve una lista de tuplas, con el titulo y la valoración de la pelicula, ordenadas de mayor a menor valoracion, del año introducido en la funcion.
     * **agrupar_por_categoria(fichero)**: Función que, dado un fichero, devuelve un diccionario cuyas claves son las diferentes categorias de las peliculas, y los valores, aquellas películas que tengan dicha categoria
+
+#### Entrega 3
+  * **Bloque 3**
+    * **contar_peliculas_por_anyo(fichero)**: Funcion que, dado un fichero, devuelve un diccionario cuyas claves son los años y los valores, las peliculas estrenadas en dicho año.
+    * **pelicula_con_mas_duracion(fichero)**: Funcion que, dado un fichero, devuelve una tupla conformada por el titulo de la pelicula y su duracion, en minutos.
+    * **aux_dic(fichero)**: Funcion auxiliar que, dado un fichero, devuelve una lista de tuplas conformadas por una tupla con titulo y año, y la valoracion de la pelicula.
+    * **pelicula_con_mas_valoracion_por_anyo(fichero)**: Funcion que, dado un fichero y empleando una funcion auxiliar, devuelve un diccionario cuyas claves son los años y los valores son el titulo de la pelicula y su correspondiente valoracion.
+    * **aux_dic_2(fichero)**: Funcion auxiliar que, dado un fichero, devuelve una lista de tuplas conformadas por una tupla con titulo y genero, y la valoracion de la pelicula
+    * **top_n_peliculas_por_genero(fichero, n=3)**: Funcion que, dado un fichero y empleando una funcion auxiliar, devuelve un diccionario cuyas claves son los generos y los valores son el titulo de la pelicula y su correspondiente valoracion.
+  * **Bloque 4**
+    * **tabla_generos(fichero)**: Funcion que, dado un fichero, devuelve un grafico cuyo eje x son los generos y cuyo eje y son las peliculas con dicho genero
 ### Módulo peliculas_test
 En el módulo de pruebas se han definido las funciones para probar el funcionamiento de las funciones del módulo películas. Es decir, cada función definida en el módulo peliculas tiene su correspondiente función para probar su funcionamiento. Por ejemplo, la funcion `test_lee_datos` ejecuta la función `lee_datos`, definida en el módulo principal. Dentro del test de lee_datos, se haya contenido las pruebas pertinentes (mostrar los datos leidos, mostrar las tres primeras y las tres ultimas peliculas del dataset)
 * **test_lee_datos**:

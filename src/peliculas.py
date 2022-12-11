@@ -111,7 +111,10 @@ def agrupar_por_categoria(fichero):
 def contar_peliculas_por_anyo(fichero):
     """
     B3 F1 (8)
-
+    A partir de un fichero CSV, devuelve un diccionario que cuenta las peliculas que hay por cada año
+    Parametros: fichero: Nombre y ruta del fichero csv a leer.
+    Formato: fichero:str
+    Devuelve: Un diccionario cuyas claves son los años y los valores, las peliculas estrenadas en dicho año
     """
     d = defaultdict(int)
     for p in fichero:
@@ -121,6 +124,10 @@ def contar_peliculas_por_anyo(fichero):
 def pelicula_con_mas_duracion(fichero):
     """
     B3 F2 (11)
+    A partir de un fichero CSV, devuelve una tupla con el titulo y la duracion de la pelicula mas larga del dataset
+    Parametros: fichero: Nombre y ruta del fichero csv a leer.
+    Formato: fichero:str
+    Devuelve: Una tupla conformada por el titulo de la pelicula y su duracion, en minutos
     """
     d = defaultdict()
     for p in fichero:
@@ -132,6 +139,10 @@ def pelicula_con_mas_duracion(fichero):
 def aux_dic(fichero):
     """
     AUX PARA B3 F3 (12)
+    A partir de un fichero CSV, devuelve una lista de tuplas conformadas por una tupla, que contiene el titulo y año de la pelicula, y otra que contiene la valoracion de la misma, ordenadas todas de mayor a menor por valoracion
+    Parametros: fichero: Nombre y ruta del fichero csv a leer.
+    Formato: fichero:str
+    Devuelve: Una lista de tuplas conformadas por una tupla con titulo y año, y la valoracion de la pelicula
     """
     d = defaultdict()
     for p in fichero:
@@ -140,6 +151,10 @@ def aux_dic(fichero):
 def pelicula_con_mas_valoracion_por_anyo(fichero):
     """
     B3 F3 (12)
+    A partir de un fichero CSV y una funcion auxiliar, devuelve la pelicula con más valoracion por cada año
+    Parametros: fichero: Nombre y ruta del fichero csv a leer.
+    Formato: fichero:str
+    Devuelve: Un diccionario cuyas claves son los años y los valores son el titulo de la pelicula y su correspondiente valoracion.
     """
     d = defaultdict(list)
     for titan, pel in aux_dic(fichero):
@@ -149,6 +164,10 @@ def pelicula_con_mas_valoracion_por_anyo(fichero):
 def aux_dic_2(fichero):
     """
     AUX PARA B3 F4 (14)
+    A partir de un fichero CSV, devuelve una lista de tuplas conformadas por una tupla, que contiene el titulo y genero de la pelicula, y otra que contiene la valoracion de la misma, ordenadas todas de mayor a menor por valoracion
+    Parametros: fichero: Nombre y ruta del fichero csv a leer.
+    Formato: fichero:str
+    Devuelve: Una lista de tuplas conformadas por una tupla con titulo y genero, y la valoracion de la pelicula
     """
     d = defaultdict()
     for p in fichero:
@@ -158,6 +177,10 @@ def aux_dic_2(fichero):
 def top_n_peliculas_por_genero(fichero, n=3):
     """
     B3 F4 (14)
+    A partir de un fichero CSV y una funcion auxiliar, devuelve el top n de peliculas con mas valoracion por genero
+    Parametros: fichero: Nombre y ruta del fichero csv a leer.
+    Formato: fichero:str
+    Devuelve: Un diccionario cuyas claves son los generos y los valores son el titulo de la pelicula y su correspondiente valoracion.
     """
     d = defaultdict(list)
     for titan, pel in aux_dic_2(fichero):
@@ -167,6 +190,10 @@ def top_n_peliculas_por_genero(fichero, n=3):
 def tabla_generos(fichero):
     """
     B4 F1
+    A partir de un fichero CSV, devuelve un gráfico de barras donde por cada genero, indica el numero de peliculas con ese genero
+    Parametros: fichero: Nombre y ruta del fichero csv a leer.
+    Formato: fichero:str
+    Devuelve: Un grafico cuyo eje x son los generos y cuyo eje y son las peliculas con dicho genero
     """
     d = defaultdict(int)
     for p in fichero:
