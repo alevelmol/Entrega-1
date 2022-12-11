@@ -82,6 +82,11 @@ En el módulo de pruebas se han definido las funciones para probar el funcionami
 * **test_top_pelicula_por_categoria_y_anyo**
 * **test_ordenar_por_rating_y_anyo**
 * **test_agrupar_por_categoria**
+* **test_contar_peliculas_por_anyo**
+* **test_pelicula_con_mas_duracion**
+* **test_pelicula_con_mas_valoracion_por_anyo**
+* **test_top_n_peliculas_por_genero**
+* **test_tabla_generos**
 
 ### Módulo peliculas2
 En este módulo se hayan las funciones de parseo, más la función de mostrar_enumerado
