@@ -72,10 +72,9 @@ def top_pelicula_por_categoria_y_anyo(fichero):
              categoria:str
     Devuelve: La tupla correspondiente a la mejor pelicula del año y categoria indicados
     '''
-    anyos = {p.year for p in fichero}
+    
     peliculas = [e for e in fichero]
-    pa = [e for e in peliculas if e.year == min(anyos)]
-    return pa
+    return sorted(peliculas, key = lambda x:x[3])[1]
 
 def ordenar_por_rating_y_anyo(fichero, anyo):
     '''
