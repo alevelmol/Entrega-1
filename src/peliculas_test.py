@@ -23,10 +23,10 @@ def test_calcular_media_duracion_por_categoria(fichero):
     print(calcular_media_duracion_por_categoria(fichero, categoria))
 
 def test_top_pelicula_por_categoria_y_anyo(fichero):
-    anyo = "1985"
-    categoria = "Drama"
-    a = top_pelicula_por_categoria_y_anyo(fichero, anyo, categoria)
-    print(f"La mejor película del año {anyo} en la categoría {categoria} es {a}")
+    #anyo = "1985"
+    #categoria = "Drama"
+    a = top_pelicula_por_categoria_y_anyo(fichero)
+    print(f"La pelicula mas antigua es {a}")
 
 def test_ordenar_por_rating_y_anyo(fichero):
     anyo = "1957"
@@ -66,12 +66,17 @@ def test_top_n_peliculas_por_genero(fichero):
 def test_tabla_generos(fichero):
     tabla_generos(fichero)
 
+def test_dic_mes_sumvaloraciones(fichero):
+    a = dic_mes_sumvaloraciones(fichero)
+    for k,v in a.items():
+        print(f"{k} ---- > {v}")
+    #print(a)
 if __name__ == "__main__":
     #test_lee_datos("Entrega 1\data\movie_dataset.csv")
     PELIS = lee_datos("Entrega 1\data\movie_dataset.csv")
     #test_filtra_por_categoria(PELIS)
     #test_calcular_media_duracion_por_categoria(PELIS)
-    #test_top_pelicula_por_categoria_y_anyo(PELIS)
+    test_top_pelicula_por_categoria_y_anyo(PELIS)
     #test_ordenar_por_rating_y_anyo(PELIS)
     #test_agrupar_por_categoria(PELIS)
     #test_contar_peliculas_por_anyo(PELIS)
@@ -79,5 +84,5 @@ if __name__ == "__main__":
     #test_aux_dic(PELIS)
     #test_pelicula_con_mas_valoracion_por_anyo(PELIS)
     #test_top_n_peliculas_por_genero(PELIS)
-    test_tabla_generos(PELIS)
-    
+    #test_tabla_generos(PELIS)
+    #test_dic_mes_sumvaloraciones(PELIS)

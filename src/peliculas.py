@@ -60,7 +60,7 @@ def calcular_media_duracion_por_categoria(fichero, categoria):
     '''
     duraciones = [a.duration for a in fichero if a.subject == categoria]
     return sum(duraciones)/len(duraciones)
-def top_pelicula_por_categoria_y_anyo(fichero, anyo, categoria="Comedy"):
+def top_pelicula_por_categoria_y_anyo(fichero):
     '''
     B2 F1
     A partir de un fichero csv, un año concreto y una categoría de película, la cual tiene como valor predeterminado "Comedy", devuelve la mejor pelicula en cuestion de la valoracion cuyo año y categoria son los indicados en la función.
@@ -72,9 +72,10 @@ def top_pelicula_por_categoria_y_anyo(fichero, anyo, categoria="Comedy"):
              categoria:str
     Devuelve: La tupla correspondiente a la mejor pelicula del año y categoria indicados
     '''
-    peliculas_por_categoria = filtra_por_categoria(fichero, categoria)
-    pa = [e for e in peliculas_por_categoria if e.year == anyo]
-    return max(pa, key = lambda x:x.rate)
+    anyos = {p.year for p in fichero}
+    peliculas = [e for e in fichero]
+    pa = [e for e in peliculas if e.year == min(anyos)]
+    return sorted(pa, key = lambda x:x.rate)
 
 def ordenar_por_rating_y_anyo(fichero, anyo):
     '''
@@ -204,3 +205,11 @@ def tabla_generos(fichero):
     plt.bar(generos, num, width=0.7, edgecolor="black" ,color = ["red", "darkorange", "gold", "yellow", "lime", "cyan", "steelblue", "blueviolet", "deeppink"])
     plt.title("Grafica generos")
     plt.show()
+    
+
+def dic_mes_sumvaloraciones(fichero):
+    d = defaultdict(int)
+    for e in fichero:
+        d[e.month] += e.rate
+        
+    return d
