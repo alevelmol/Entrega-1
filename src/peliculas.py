@@ -75,7 +75,7 @@ def top_pelicula_por_categoria_y_anyo(fichero):
     anyos = {p.year for p in fichero}
     peliculas = [e for e in fichero]
     pa = [e for e in peliculas if e.year == min(anyos)]
-    return sorted(pa, key = lambda x:x.rate)
+    return pa
 
 def ordenar_por_rating_y_anyo(fichero, anyo):
     '''

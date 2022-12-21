@@ -76,7 +76,7 @@ if __name__ == "__main__":
     PELIS = lee_datos("Entrega 1\data\movie_dataset.csv")
     #test_filtra_por_categoria(PELIS)
     #test_calcular_media_duracion_por_categoria(PELIS)
-    #test_top_pelicula_por_categoria_y_anyo(PELIS)
+    test_top_pelicula_por_categoria_y_anyo(PELIS)
     #test_ordenar_por_rating_y_anyo(PELIS)
     #test_agrupar_por_categoria(PELIS)
     #test_contar_peliculas_por_anyo(PELIS)
