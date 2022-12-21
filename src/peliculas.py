@@ -74,7 +74,7 @@ def top_pelicula_por_categoria_y_anyo(fichero):
     '''
     
     peliculas = [e for e in fichero]
-    return sorted(peliculas, key = lambda x:x[3])[1]
+    return sorted(peliculas, key = lambda x:x[3])[0]
 
 def ordenar_por_rating_y_anyo(fichero, anyo):
     '''
